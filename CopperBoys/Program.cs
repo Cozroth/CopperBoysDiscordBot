@@ -1,10 +1,19 @@
-﻿namespace CopperBoys
+﻿using Newtonsoft.Json;
+using System.IO;
+using System;
+using System.Threading.Tasks;
+
+public class Program
 {
-    internal class Program
+    public static async Task Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        string configFileContents = File.ReadAllText("config.json");
+        BotConfig config = JsonConvert.DeserializeObject<BotConfig>(configFileContents);
+
+        var bot = new CopperBoysBot(config);
+        await bot.StartAsync();
+
+        // Prevent the application from exiting immediately
+        await Task.Delay(-1);
     }
 }
