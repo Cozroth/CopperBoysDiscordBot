@@ -1,3 +1,6 @@
+.vs/
+CopperBoys/.vs/
+slnx.sqlite
 bin/
 config/
 obj/
