@@ -7,7 +7,7 @@ public class Program
 {
     public static async Task Main(string[] args)
     {
-        string configFileContents = File.ReadAllText("config.json");
+        string configFileContents = File.ReadAllText("config\config.json");
         BotConfig config = JsonConvert.DeserializeObject<BotConfig>(configFileContents);
 
         var bot = new CopperBoysBot(config);
