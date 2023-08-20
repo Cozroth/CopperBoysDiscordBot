@@ -1,1 +1,5 @@
-
+bin/
+config/
+obj/
+CopperBoysDiscordBot.sln
+CopperBoysDiscordBot.csproj
